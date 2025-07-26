@@ -12,7 +12,7 @@
 
 # testing
 /coverage
-
+../jestSetup.txt
 # next.js
 /.next/
 /out/
