@@ -8,61 +8,50 @@ class PkmonApiUtil{
         )
         return response;
     }
+
+
     static async getPokemon(id:number){
         const baseUrl = "https://pokeapi.co/api/v2/pokemon";
         let pkmon = await PkmonApiUtil.getPokemonInfo(baseUrl, id);
         return pkmon;
     }
+
+
     static async getPokemonSpecies(id:number){
         const baseUrl = "https://pokeapi.co/api/v2/pokemon-species";
         let pkmonSpecies = await PkmonApiUtil.getPokemonInfo(baseUrl, id);
         return pkmonSpecies;
     }
-    static getPokemonName(pkmon:object){
+   
+    static async getPokemonName(id:number){
+        const pkmon:any = await PkmonApiUtil.getPokemon(id);
+        for(let i = 0; i < pkmon.forms.length; i++){
+          if(pkmon.forms[i].name != undefined){
+            return pkmon.forms[i].name;
+          }
+        }
+    }
 
-    }
-    static getPokemonStats(pkmon:object){
-    /*
-    "stats": [
-    {
-      "base_stat": 70,
-      "effort": 2,
-      "stat": {
-        "name": "hp",
-        "url": "https://pokeapi.co/api/v2/stat/1/"
-      }
-    },
-    */
-    }
-    static getPokemonDesc(pkmon:object){
-        /*
-        flavor_text_entries": [
-    {
-      "flavor_text": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON.",
-      "language": {
-        "name": "en",
-        "url": "https://pokeapi.co/api/v2/language/9/"
-      },
-      "version": {
-        "name": "red",
-        "url": "https://pokeapi.co/api/v2/version/1/"
-      }
-    },
-    {
-      "flavor_text": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON.",
-      "language": {
-        "name": "en",
-        "url": "https://pokeapi.co/api/v2/language/9/"
-      },
-      "version": {
-        "name": "blue",
-        "url": "https://pokeapi.co/api/v2/version/2/"
-      }
-    },
-        */
-    }
-    static getPokemonSprite(pkmon:object){
 
+    static getPokemonStats(pkmon:any){
+      let baseStats = []
+      for(let i = 0; i < pkmon.stats.length;i++){
+          baseStats.push({"base_stat":pkmon.stats[i].stat.name, "val":pkmon.stats[i].base_stat});
+      }
+      return(baseStats);
+    }
+
+
+    static getPokemonDesc(pkmonSpecies:any){
+      const flavorEntries = pkmonSpecies.flavor_text_entries;
+      for(let i = 0; i < flavorEntries.length; i++){
+        if(flavorEntries[i].language.name =="en"){
+          return(flavorEntries[i].flavor_text);
+        }
+      }
+    }
+    static getPokemonSprite(pkmon:any){
+      return pkmon.sprites.front_default;
     }
 }
 
