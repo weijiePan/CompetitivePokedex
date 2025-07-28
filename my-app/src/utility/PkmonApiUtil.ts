@@ -22,14 +22,15 @@ class PkmonApiUtil{
         let pkmonSpecies = await PkmonApiUtil.getPokemonInfo(baseUrl, id);
         return pkmonSpecies;
     }
-   
-    static async getPokemonName(id:number){
-        const pkmon:any = await PkmonApiUtil.getPokemon(id);
-        for(let i = 0; i < pkmon.forms.length; i++){
-          if(pkmon.forms[i].name != undefined){
-            return pkmon.forms[i].name;
-          }
-        }
+    
+
+    static getPokemonName(pkmon:{name:string}){
+        return pkmon.name;
+    }
+
+    
+    static getPokemonId(pkmon:any){
+      return(pkmon.id);
     }
 
 
@@ -41,17 +42,26 @@ class PkmonApiUtil{
       return(baseStats);
     }
 
-
+    static cleanEscapeCharacter(str:string){
+       let ind =  str.indexOf("\f");
+       str = str.substring(0,ind) + " " + str.substring(ind + 1);
+      return(str);
+    }
     static getPokemonDesc(pkmonSpecies:any){
       const flavorEntries = pkmonSpecies.flavor_text_entries;
       for(let i = 0; i < flavorEntries.length; i++){
         if(flavorEntries[i].language.name =="en"){
-          return(flavorEntries[i].flavor_text);
+          return(PkmonApiUtil.cleanEscapeCharacter(flavorEntries[i].flavor_text));
         }
       }
+      return(flavorEntries[0].flavor_text); 
     }
     static getPokemonSprite(pkmon:any){
-      return pkmon.sprites.front_default;
+      // Official artwork - highest quality for enlarging
+      
+      
+      // Fallback to regular sprite
+      return pkmon.sprites.other["official-artwork"].front_default;
     }
 }
 
