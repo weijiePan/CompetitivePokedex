@@ -19,10 +19,22 @@ Pokedex list
 site: [competitivePokedex](https://competitive-pokedex-nu.vercel.app/)
 
 ## How to use(developer)
--fork the project  
--clone the project  
--download dependencies with "npm install"  
--run developer server with "npm run dev"  
+switch to my_app directory   
+```bash
+cd my_app/
+```  
+run the development server
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+
+```
+
 
 
 ## plan
@@ -34,5 +46,5 @@ site: [competitivePokedex](https://competitive-pokedex-nu.vercel.app/)
 :white_large_square: more detailed pokemon display (displays description and base stat)
 
 ## issues
-⬜ sometimes pokemon description is in a language other than English  
+:white_check_mark: sometimes pokemon description is in a language other than English  
 ⬜ redering many pokemons causes long loading time
