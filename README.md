@@ -16,7 +16,7 @@ Pokedex list
 ![list view](./src/assets/listView.png "pokedex list")
 
 ## How to use(user)
-site: [competitivePokedex](https://competitivepokedex.netlify.app/)
+site: [competitivePokedex]([https://competitivepokedex.netlify.app/](https://competitive-pokedex-nu.vercel.app/))
 
 ## How to use(developer)
 -fork the project  
