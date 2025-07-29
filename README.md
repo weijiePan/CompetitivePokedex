@@ -38,12 +38,20 @@ bun dev
 
 
 ## plan
--list page(a list of customizeable number of pokemons displayed like a table)  
-:white_check_mark: individual pokemon display(features name and sprite)  
-:white_check_mark: list that has a slider for adjusting number of pokemon displayed  
-:white_large_square: more detailed pokemon display(displays description and base stat)  
-:white_large_square: more detailed pokemon display (displays description and base stat)
-:white_large_square: more detailed pokemon display (displays description and base stat)
+-pokedex page
+:white_check_mark: individual pokemon display(names, sprite, base_stat, index change button)  
+⬜ pokemon search bar  
+⬜ sidebar displaying an user's team composition
+
+-team builder page
+⬜ sidebar displaying an user's team composition
+⬜ option to show team defense and weakness coverage
+
+-backend
+⬜ user database(team composition, profile picture, name)
+⬜ user login and authentication
+
+
 
 ## issues
 :white_check_mark: sometimes pokemon description is in a language other than English  
