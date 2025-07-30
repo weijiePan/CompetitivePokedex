@@ -36,7 +36,7 @@ function Pokedex(){
             PkmonApiUtil.getPokemon(id).then(
                 (pkmon) => {
                     setPkmon(pkmon)
-                    getAverageColor(PkmonApiUtil.getPokemonSprite(pkmon)).then((color)=>{
+                    getAverageColor(PkmonApiUtil.getPokemonSprite(pkmon as any)).then((color)=>{
                         setPkmonColor(color)
                     })
 
@@ -72,7 +72,7 @@ function Pokedex(){
     return(
         <div className = "pokedex  flexbox-horizontal fullWidthAndHeight">
             <div className = "leftGraphicBar" style ={{ backgroundColor: pkmonColor? pkmonColor: "blue"}} >
-                <img className="pkmonSprite" src={pkmon ? PkmonApiUtil.getPokemonSprite(pkmon): null}></img>
+                <img className="pkmonSprite" src = {pkmon ? PkmonApiUtil.getPokemonSprite(pkmon): ""}></img>
             </div>
             <div className = "pkmonInfo flexbox-vertical fullWidth">
                 <div className = "identifier fullWidth">
