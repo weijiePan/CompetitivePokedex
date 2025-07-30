@@ -29,12 +29,12 @@ class PkmonApiUtil{
     }
 
     
-    static getPokemonId(pkmon:any){
+    static getPokemonId(pkmon:{id:number}){
       return(pkmon.id);
     }
 
 
-    static getPokemonStats(pkmon:any){
+    static getPokemonStats(pkmon:{stats:{stat:{name:string}, base_stat: number}[]}){
       let baseStats = []
       for(let i = 0; i < pkmon.stats.length;i++){
           baseStats.push({"base_stat":pkmon.stats[i].stat.name, "val":pkmon.stats[i].base_stat});
@@ -47,7 +47,7 @@ class PkmonApiUtil{
        str = str.substring(0,ind) + " " + str.substring(ind + 1);
       return(str);
     }
-    static getPokemonDesc(pkmonSpecies:any){
+    static getPokemonDesc(pkmonSpecies:{flavor_text_entries:{flavor_text:string, language:{name:string}}[]}){
       const flavorEntries = pkmonSpecies.flavor_text_entries;
       for(let i = 0; i < flavorEntries.length; i++){
         if(flavorEntries[i].language.name =="en"){
@@ -56,7 +56,7 @@ class PkmonApiUtil{
       }
       return(flavorEntries[0].flavor_text); 
     }
-    static getPokemonSprite(pkmon:any){
+    static getPokemonSprite(pkmon:{sprites:{other:{"official-artwork":{"front_default":string}}}}){
       // Official artwork - highest quality for enlarging
       
       
