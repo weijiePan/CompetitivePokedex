@@ -1,4 +1,4 @@
-import PkmonApiUtil from "@/utility/PkmonApiUtil";
+import PkmonApiUtil from "../utility/PkmonApiUtil";
 import { Playwrite_SK } from "next/font/google";
 for(let i = 1; i < 4; i++){
     it("pokemon object fetch",

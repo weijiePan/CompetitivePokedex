@@ -1,6 +1,6 @@
 'use client'
 import "./pokedex.css";
-import PkmonApiUtil from "@/utility/PkmonApiUtil";
+import PkmonApiUtil from "../utility/PkmonApiUtil";
 import { ReactNode, useState } from "react";
 import { useEffect } from "react";
 import ChangePkmonBtn from "./ChangePkmonBtn";
