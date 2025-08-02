@@ -12,6 +12,8 @@
 
 .identifier{
   height:10%;
+  font-weight: normal;
+  font-size: 1.5em;
 }
 .pkmonSprite{
     width:20%;

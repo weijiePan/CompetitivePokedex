@@ -7,7 +7,7 @@ import ChangePkmonBtn from "./ChangePkmonBtn";
 import { FastAverageColor } from "fast-average-color"
 import "./globals.css";
 import next from "next";
-
+import fs from "fs"
 function Pokedex(){
     //https://www.youtube.com/watch?v=MxbEjINYIPc
     let [pkmon, setPkmon] = useState<any | null>(null);
@@ -52,7 +52,7 @@ function Pokedex(){
         },
         [id]
     )
-    let baseStat:any = null;
+    let baseStat:null|ReactNode = null;
     if(pkmon != null){
         baseStat = PkmonApiUtil.getPokemonStats(pkmon).map(
                 (stat)=>
@@ -69,10 +69,16 @@ function Pokedex(){
                 
         )
     }
+    let types:null|ReactNode = null;
+    if(pkmon != null){
+        PkmonApiUtil.getPokemonTypes(pkmon).map(()=>{
+
+        })
+    }
     return(
         <div className = "pokedex  flexbox-horizontal fullWidthAndHeight">
             <div className = "leftGraphicBar" style ={{ backgroundColor: pkmonColor? pkmonColor: "blue"}} >
-                <img className="pkmonSprite" src = {pkmon ? PkmonApiUtil.getPokemonSprite(pkmon): ""}></img>
+                <img className="pkmonSprite" src = {pkmon ? PkmonApiUtil.getPokemonSprite(pkmon): undefined}></img>
             </div>
             <div className = "pkmonInfo flexbox-vertical fullWidth">
                 <div className = "identifier fullWidth">

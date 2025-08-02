@@ -1,5 +1,9 @@
 
 class PkmonApiUtil{
+
+    typeSprites = {
+      "bug":""
+    }
     static async getPokemonInfo(baseUrl:string, id:number){
         const url = `${baseUrl}/${id}/`;
         let response = fetch(url); 
@@ -9,7 +13,7 @@ class PkmonApiUtil{
         return response;
     }
 
-
+    
     static async getPokemon(id:number){
         const baseUrl = "https://pokeapi.co/api/v2/pokemon";
         let pkmon = await PkmonApiUtil.getPokemonInfo(baseUrl, id);
@@ -28,7 +32,14 @@ class PkmonApiUtil{
         return pkmon.name;
     }
 
-    
+    static getPokemonTypes(pkmon:{types:{type:{name:string}}[]}){
+      const types = pkmon.types;
+      let cleanedTypeArr = [];
+      for(let i = 0; i < pkmon.types.length; i++){
+        cleanedTypeArr.push(types[i].type.name);
+      }
+      return cleanedTypeArr;
+    }
     static getPokemonId(pkmon:{id:number}){
       return(pkmon.id);
     }
