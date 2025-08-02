@@ -12,7 +12,7 @@ function Pokedex(){
     //https://www.youtube.com/watch?v=MxbEjINYIPc
     let [pkmon, setPkmon] = useState<any | null>(null);
     let [pkmonSpecies, setPkmonSpecies] = useState<any | null>(null);
-    let [id, setId] = useState(1);
+    let [id, setId] = useState(63);
     let [pkmonColor, setPkmonColor] = useState<string | null>(null);
     function nextPkmon(){
         if(id < 1025){
@@ -25,7 +25,6 @@ function Pokedex(){
             setId(id - 1);
         }
     }
-
     async function getAverageColor(imgUrl:string){
         const fac = await new FastAverageColor();
         const color = await(fac.getColorAsync(imgUrl));
@@ -69,11 +68,13 @@ function Pokedex(){
                 
         )
     }
-    let types:null|ReactNode = null;
+    let types:ReactNode|ReactNode[] = null;
     if(pkmon != null){
-        PkmonApiUtil.getPokemonTypes(pkmon).map(()=>{
-
+        types = PkmonApiUtil.getPokemonTypes(pkmon).map((type)=>{
+           return <img src = {PkmonApiUtil.getPokemonTypeSprite(type as keyof object)} className = "pkmonType"></img>
         })
+    }else{
+        types = <></>
     }
     return(
         <div className = "pokedex  flexbox-horizontal fullWidthAndHeight">
@@ -84,6 +85,7 @@ function Pokedex(){
                 <div className = "identifier fullWidth">
                     <img className="typeSprite marginHor20"></img>
                     <h3 className="name"> {pkmon ? PkmonApiUtil.getPokemonName(pkmon) : null}</h3>
+                    {types}
                </div>
                <div className = "baseStats fullWidth flexbox-horizontal flex-wrap ">
                     {baseStat}
