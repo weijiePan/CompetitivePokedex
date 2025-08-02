@@ -3,6 +3,7 @@
 The competitive pokedex helps you discover new pokemons and inform your team building decision through useful stats.
 
 ## About  
+'
 The Competitive-Pokedex provides  
 1)An index system for accessing pokemon information  
 2)A team builder that shows you the relative weakness and resistance of your team  
