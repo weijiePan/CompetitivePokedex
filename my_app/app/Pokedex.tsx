@@ -5,7 +5,7 @@ import { ReactNode, useState } from "react";
 import { useEffect } from "react";
 import ChangePkmonBtn from "./ChangePkmonBtn";
 import { FastAverageColor } from "fast-average-color"
-import "./globals.css";
+
 import next from "next";
 import fs from "fs"
 function Pokedex(){
@@ -77,7 +77,7 @@ function Pokedex(){
         types = <></>
     }
     return(
-        <div className = "pokedex  flexbox-horizontal fullWidthAndHeight">
+        <div className = "pokedex  flexbox-horizontal">
             <div className = "leftGraphicBar" style ={{ backgroundColor: pkmonColor? pkmonColor: "blue"}} >
                 <img className="pkmonSprite" src = {pkmon ? PkmonApiUtil.getPokemonSprite(pkmon): undefined}></img>
             </div>
@@ -91,7 +91,6 @@ function Pokedex(){
                     {baseStat}
                </div>
                <div className = "description">
-                    <div className="leftPlaceHolder"></div>
                     <div className="descriptionText"></div>
                     <p>{pkmonSpecies ? PkmonApiUtil.getPokemonDesc(pkmonSpecies) : null}</p>
                </div>

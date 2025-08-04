@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import NavLinks from "./navLinks";
 import "./globals.css";
 import Link from "next/link";
+import "./navLinks.css";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -9,9 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en" className = "fullWidthAndHeight">
       <body className = "fullWidthAndHeight">
-         <Link href = "/"><p>home</p></Link>
-        <Link href = "team"><p>team</p></Link>
-        
+        <NavLinks></NavLinks>
         {children}
       </body>
     </html>
