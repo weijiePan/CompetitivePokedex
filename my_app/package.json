@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "dotenv": "^17.2.1",
     "fast-average-color": "^9.5.0",
     "next": "15.4.4",
     "react": "19.1.0",
@@ -25,6 +26,7 @@
     "@types/react-dom": "^19",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
+    "postgres": "^3.4.7",
     "ts-node": "^10.9.2",
     "typescript": "^5"
   }
