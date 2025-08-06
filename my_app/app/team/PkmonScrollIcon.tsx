@@ -1,29 +1,33 @@
 "use client"
-
 import "./PkmonScrollIcon.css";
 import PkmonApiUtil from "../../utility/PkmonApiUtil"
 import {useEffect, useState} from "react"
-export default function PkmonScrollIcon(id:number){
+export default function PkmonScrollIcon({id}:{id:number}){
         let [pkmonSprite, changePkmonSprite]: [pkmonSprite : string|null, changePkmonSprite: Function] = useState(null);
         let [pkmonName, changePkmonName]: [pkmonName : string|null, changePkmonName: Function] = useState(null);
-        let [typeSprite, changeType]: [typeSprite : string|null, changeType: Function] = useState(null);
+        let [typeSprites, changeTypes]: [typeSprite : string|null, changeType: Function] = useState(null);
 
         useEffect(()=>{
             PkmonApiUtil.getPokemon(id).then(
                 (Pkmon:any) => {
-                    changePkmonSprite(PkmonApiUtil.getPokemonSprite(Pkmon));
-                    changeType(PkmonApiUtil.getPokemonTypes(Pkmon));
+                    changePkmonSprite(PkmonApiUtil.getPokemonSprite(Pkmon, true));
                     changePkmonName(PkmonApiUtil.getPokemonName(Pkmon));
+                    const types = PkmonApiUtil.getPokemonTypes(Pkmon).map(type => {
+                        return <img src = {PkmonApiUtil.getPokemonTypeSprite(type as keyof object)} className = "pkmonType"></img>
+                    })
+                    changeTypes(types);
                 }
             )
         }, [])
         return(
-            <div className = {`PkmonScrollIcon`}>
+            <div className = {`pkmonScrollIcon`}>
                 {pkmonSprite ? <img className = "pkmonSprite" src={pkmonSprite}></img>: <img className = "pkmonSprite"></img>}
                 <div>
-                    {pkmonName? <p className = "pkmonName" >{pkmonName}</p>: <p className ="pkmonName"></p>>}
+                    {pkmonName? <p className = "pkmonName" >{pkmonName}</p>: <p className ="pkmonName"></p>}
                 </div>
-                {typeSprite ? <img className = "typeSprite" src={typeSprite}></img>: <img className = "typeSprite"></img>}
+                <div className = "typeSprites">
+                    {typeSprites}
+                </div>
             </div>
         )
 }
