@@ -14,7 +14,7 @@ Competitive-Pokedex gathers its information on pokemons through api calls to htt
 
 ## Feature screenshots
 Pokedex list
-![pokedx](./my_app/assets/pages/pokedex.gif)
+![pokedx](./my_app/public/assets/pages/pokedex.gif)
 
 ## How to use(user)
 site: [competitivePokedex](https://competitive-pokedex-nu.vercel.app/)
@@ -42,18 +42,18 @@ bun dev
 -pokedex page
 :white_check_mark: individual pokemon display(names, sprite, base_stat, index change button)  
 ⬜ pokemon search bar  
-⬜ sidebar displaying an user's team composition
-
--team builder page
-⬜ sidebar displaying an user's team composition
-⬜ option to show team defense and weakness coverage
-
--backend
-⬜ user database(team composition, profile picture, name)
-⬜ user login and authentication
+⬜ sidebar displaying an user's team composition  
+  
+-team builder page  
+⬜ sidebar displaying an user's team composition  
+⬜ option to show team defense and weakness coverage  
+  
+-backend  
+⬜ user database(team composition, profile picture, name)  
+⬜ user login and authentication  
 
 
 
 ## issues
-:white_check_mark: sometimes pokemon description is in a language other than English  
-⬜ redering many pokemons causes long loading time
+:white_check_mark: sometimes pokemon description is in a language other than English   
+⬜ redering many pokemons causes long loading time  
