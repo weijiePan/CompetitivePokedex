@@ -1,8 +1,12 @@
+import TeamDataUtil from "../../utility/teamDataUtil"
 
-export default function TeamSetup(){
+import Scroller from "./Scroller"
+export default function TeamSetup(props:any){
     return(
         <>
-            <p>ahhh</p>
+            <Scroller></Scroller>
         </>
     )
 }
+//passing a component to a server component for another server component as prop causes hydration?
+//ex:passing import PkmonScrollIcon from "./PkmonScrollIcon"'s PkmonScrollIcon to Scroller as a prop for the specific icon

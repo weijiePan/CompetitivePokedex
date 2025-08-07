@@ -89,12 +89,16 @@ class PkmonApiUtil{
       }
       return(flavorEntries[0].flavor_text); 
     }
-    static getPokemonSprite(pkmon:{sprites:{other:{"official-artwork":{"front_default":string}}}}){
+    static getPokemonSprite(pkmon:{sprites:{other:{"official-artwork":{"front_default":string}}, front_default:string}}, isRegular?:boolean){
       // Official artwork - highest quality for enlarging
       
-      
+      if(isRegular){
+        return pkmon.sprites.front_default;
+      }else{
+        return pkmon.sprites.other["official-artwork"].front_default;
+      }
       // Fallback to regular sprite
-      return pkmon.sprites.other["official-artwork"].front_default;
+      
     }
 }
 
