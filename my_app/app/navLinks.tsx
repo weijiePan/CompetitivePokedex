@@ -1,6 +1,5 @@
-'use client'
+"use client"
 import Link from "next/link";
-import {usePathname} from "next/navigation";
 import localFont from "next/font/local";
  const Mozilla = localFont(
         {
@@ -9,7 +8,7 @@ import localFont from "next/font/local";
     )
 export default function NavLinks(){
    
-    const pathName = usePathname();
+    
     return(
         <nav className = "top-nav flexbox-horizontal">  
             <Link href="/"><p className= {`${Mozilla.className}`}>Home</p></Link>

@@ -71,7 +71,7 @@ function Pokedex(){
     let types:ReactNode|ReactNode[] = null;
     if(pkmon != null){
         types = PkmonApiUtil.getPokemonTypes(pkmon).map((type)=>{
-           return <img src = {PkmonApiUtil.getPokemonTypeSprite(type as keyof object)} className = "pkmonType"></img>
+           return <img src = {PkmonApiUtil.getPokemonTypeSprite(type as keyof object)} className = "pkmonType" key ={PkmonApiUtil.getPokemonId(pkmon)}></img>
         })
     }else{
         types = <></>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import NavLinks from "./navLinks";
 import "./globals.css";
-import Link from "next/link";
 import "./navLinks.css";
+
 export default function RootLayout({
   children,
 }: Readonly<{

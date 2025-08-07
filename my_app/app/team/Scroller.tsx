@@ -1,10 +1,12 @@
+"use client"
 import "./Scroller.css"
-export default function Scroller({ScrollIcon}:any){
+import PkmonScrollIcon from "./PkmonScrollIcon"
+export default function Scroller(){
     let scrollStart = 1;
     let scrollRange = 10;//number scrolled before loading
     let scrollIcons:any[] = [];
     for(let i = scrollStart; i < scrollRange; i++ ){
-        scrollIcons.push(<ScrollIcon id = {i}></ScrollIcon>)
+        scrollIcons.push(<PkmonScrollIcon key = {i} id = {i}></PkmonScrollIcon>)
     }
     return(
         <div className = "scroller">

@@ -20,7 +20,7 @@
   font-weight: normal;
   font-size: 1.5em;
 }
-.pkmonSprite{
+.leftGraphicBar .pkmonSprite{
     width:20%;
     height:auto;
     position: absolute;
