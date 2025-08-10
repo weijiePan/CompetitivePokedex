@@ -2,7 +2,11 @@
 import "./PkmonScrollIcon.css";
 import PkmonApiUtil from "../../utility/PkmonApiUtil"
 import {useEffect, useState} from "react"
-export default function PkmonScrollIcon({id, pkmonName, pkmonSprite, typeSprites}:{id?:string, pkmonName?:string, pkmonSprite?:string, typeSprites?:string[]}){
+export default function PkmonScrollIcon({info}:{info:{id?:string, pkmonName?:string, pkmonSprite?:string, typeSprites?:string[]}}){
+    const id = info.id;
+    const typeSprites = info.typeSprites;
+    const pkmonName = info.pkmonName;
+    const pkmonSprite = info.pkmonSprite;
     if(id && typeSprites){
         const types = typeSprites.map((type) => {
             return(
