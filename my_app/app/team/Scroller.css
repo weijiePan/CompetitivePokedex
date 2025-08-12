@@ -1,8 +1,11 @@
 .scroller{
+    display: flex;
+    flex-direction: column-reverse;
     width:500px;
     height:700px;
     overflow: scroll;
     overflow-x:hidden;
+    position: absolute;
 }
 .loading{
     margin:auto;

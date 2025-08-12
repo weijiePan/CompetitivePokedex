@@ -20,7 +20,7 @@ export default function Scroller(){
                         const pkmon:any = await PkmonApiUtil.getPokemon(i); //specify the type later
                         const id = `${i}`;
                         const name = PkmonApiUtil.getPokemonName(pkmon);
-                        const pkmonSprite = PkmonApiUtil.getPokemonSprite(pkmon);
+                        const pkmonSprite = PkmonApiUtil.getPokemonSprite(pkmon, true);
                         const typeSprites = PkmonApiUtil.getPokemonTypes(pkmon).map((type:string) => PkmonApiUtil.getPokemonTypeSprite(type as keyof object));
                         newPkmon.push({id:id, pkmonName: name, pkmonSprite: pkmonSprite, typeSprites: typeSprites });
                 }

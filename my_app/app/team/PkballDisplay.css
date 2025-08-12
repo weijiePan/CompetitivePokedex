@@ -1,0 +1,28 @@
+.pkball-display{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right:20px;
+
+ 
+}
+.pkball-display img{
+    position: relative;
+
+}
+
+.scroller{
+    position: absolute;
+    top:-200%;
+    left:50%;
+    z-index: 2;
+
+   
+}
+.team-sprite{
+    left:-50%;
+    top:-50%;
+
+    
+}
+
+ 
