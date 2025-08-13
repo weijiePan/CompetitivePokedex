@@ -4,6 +4,6 @@ import Pokedex from "./Pokedex"
 
 export default function Home(props:any) {
   return (
-    <Pokedex></Pokedex>
+  
   );
 }

@@ -1,34 +1,6 @@
-.fullWidthAndHeight{
-  width: 100%;
-  height: 100%;
-}
-.flexbox-horizontal{
-  display: flex;
-  flex-direction: row;
-}
-.flex-wrap{
-  flex-wrap: wrap;
-}
-.flexbox-vertical{
-  display: flex;
-  flex-direction: column;
-}
-
-.fullWidth{
+html, body{
   width:100%;
-}
-
-.marginHor20{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-body{
-  padding: 0;
-  margin:0;
-  overflow: hidden;
-}
-
-html{
+  height:100%;
   padding:0;
   margin:0;
 }
