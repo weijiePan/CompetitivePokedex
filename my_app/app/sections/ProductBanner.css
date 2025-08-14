@@ -1,0 +1,58 @@
+.ProductBanner{
+    height: 100%;
+    width:100%;
+    position: relative;
+    color:white;
+    overflow: hidden;
+ 
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width:30%;
+    margin: auto;
+}
+nav a{
+    text-decoration: none;
+}
+nav a p{
+    font-size: 3vh;
+    color:rgb(213, 207, 196);
+}
+nav a p:hover{
+    color:rgb(107, 106, 103);
+}
+.ProductBanner h1{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:8vh;
+    z-index: 10;
+    color:rgb(255, 255, 255);
+
+}
+.ProductBanner .pokeball{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:20vh;
+    height:20vh;
+    z-index:2;
+    position: absolute;
+    filter:brightness(0.7)
+}
+.ProductBanner .background{
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    object-fit: cover;
+    position: absolute;
+    filter:blur(0.5vh);
+    z-index: -1;
+
+}
+

@@ -1,0 +1,21 @@
+.Split{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 5%;
+    overflow: hidden;
+}
+
+.Split .description{
+    width: 40%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    font-size:3vh;
+}
+.sideImage{
+    width:30%;
+    height:100%;
+    object-fit: contain;
+
+}

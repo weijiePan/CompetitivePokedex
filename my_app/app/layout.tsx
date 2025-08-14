@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import NavLinks from "./navLinks";
 import "./globals.css";
-import "./navLinks.css";
 
 export default function RootLayout({
   children,
@@ -11,7 +9,6 @@ export default function RootLayout({
   return (
     <html lang="en" className = "fullWidthAndHeight">
       <body className = "fullWidthAndHeight">
-        <NavLinks></NavLinks>
         {children}
       </body>
     </html>
