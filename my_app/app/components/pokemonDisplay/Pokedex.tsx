@@ -1,9 +1,9 @@
 'use client'
 import "./pokedex.css";
-import PkmonApiUtil from "../utility/PkmonApiUtil";
+import PkmonApiUtil from "../../utility/PkmonApiUtil";
 import { ReactNode, useState } from "react";
 import { useEffect } from "react";
-import ChangePkmonBtn from "./ChangePkmonBtn";
+import ChangePkmonBtn from "../interactivity/buttons/RectangleBtn";
 import { FastAverageColor } from "fast-average-color"
 
 import next from "next";
@@ -95,8 +95,7 @@ function Pokedex(){
                     <p>{pkmonSpecies ? PkmonApiUtil.getPokemonDesc(pkmonSpecies) : null}</p>
                </div>
                <div className="changeButtons">
-                    <ChangePkmonBtn className = "left" change = {prevPkmon} text = "<"></ChangePkmonBtn>
-                    <ChangePkmonBtn className = "right" change = {nextPkmon} text = ">"></ChangePkmonBtn>
+     
                </div>
                
             </div>

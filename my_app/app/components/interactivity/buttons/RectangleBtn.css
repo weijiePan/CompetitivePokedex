@@ -1,0 +1,19 @@
+.rectangleBtn{
+    border: 0px solid black;
+    width: 15vh;
+    height: 10vh;
+    border-radius: 10px;
+    font-size: 3vh;
+    color: rgb(0, 4, 227);
+    background-color: rgb(52, 194, 52);
+}
+
+.rectangleBtn:hover{
+    border: 0px solid black;
+    width: 20vh;
+    height: 12vh;
+    border-radius: 10px;
+    font-size: 3vh;
+    color: black(35, 36, 98);
+    background-color: rgb(52, 194, 52);
+}
