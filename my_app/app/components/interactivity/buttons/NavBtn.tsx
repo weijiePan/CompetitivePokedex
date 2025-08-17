@@ -3,7 +3,7 @@ import {useRouter} from "next/navigation"
 import { MouseEventHandler } from "react";
 
 
-import "./rectangleBtn.css";
+import "./RectangleBtn.css";
 
 export default function NavBtn({ className, text, action}: {className:string, text:string, action: string}) {//action takes either a link or a callback
     const router = useRouter();    
