@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Pokedex from "./components/pokemonDisplay/Pokedex"
 import OneColumnPage from "./components/structure/pageLayout/OneColumnPage";
 import ProductBanner from "./sections/ProductBanner";
 import SplitSection from "./components/structure/sectionLayout/SplitSection";

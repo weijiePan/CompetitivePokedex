@@ -7,7 +7,7 @@ export default function NavLinks(){
     return(
         <nav className = "top-nav flexbox-horizontal">  
             <Link href="/"><p className= {``}>Home</p></Link>
-            <Link href="team" ><p className= {``}>team</p></Link>
+            <Link href="/pages/pokedex" ><p className= {``}>Pokedex</p></Link>
         </nav>
     )
 }

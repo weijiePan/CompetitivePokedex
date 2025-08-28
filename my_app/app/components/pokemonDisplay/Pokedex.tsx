@@ -5,6 +5,7 @@ import { ReactNode, useState } from "react";
 import { useEffect } from "react";
 import ChangePkmonBtn from "../interactivity/buttons/RectangleBtn";
 import { FastAverageColor } from "fast-average-color"
+import RectangleBtn from "../interactivity/buttons/RectangleBtn";
 
 import next from "next";
 import fs from "fs"
@@ -71,7 +72,7 @@ function Pokedex(){
     let types:ReactNode|ReactNode[] = null;
     if(pkmon != null){
         types = PkmonApiUtil.getPokemonTypes(pkmon).map((type)=>{
-           return <img src = {PkmonApiUtil.getPokemonTypeSprite(type as keyof object)} className = "pkmonType" key = {crypto.randomUUID()}></img>
+           return <img src = {PkmonApiUtil.getPokemonTypeSprite(type as keyof object)} className = "pkmonType" ></img>
         })
     }else{
         types = <></>
@@ -94,8 +95,10 @@ function Pokedex(){
                     <div className="descriptionText"></div>
                     <p>{pkmonSpecies ? PkmonApiUtil.getPokemonDesc(pkmonSpecies) : null}</p>
                </div>
-               <div className="changeButtons">
-     
+               <div className="changeButtons">  
+                    <RectangleBtn className = "nextBtn" text="Previous" action = {prevPkmon}></RectangleBtn>
+                    <RectangleBtn className = "nextBtn" text="Next" action = {nextPkmon}></RectangleBtn>
+                    
                </div>
                
             </div>

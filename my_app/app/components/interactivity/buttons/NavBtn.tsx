@@ -11,6 +11,6 @@ export default function NavBtn({ className, text, action}: {className:string, te
         router.replace(action);
     }
     return(
-        <button value = {text} className = {`rectangleBtn ` + className} type="button" onClick={() => changeUrl}>{text}</button>
+        <button value = {text} className = {`rectangleBtn navBtn` + className} type="button" onClick={() => changeUrl}>{text}</button>
     )
 }
